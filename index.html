@@ -1,219 +1,353 @@
-<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel="icon" href="favicon.ico"><title>小视秀</title><style type="text/css">@media screen and (min-width:1366px) {
-          body {
-            min-width: 960px !important;
-            padding:0;
-            margin:0 auto;
-            list-style:none;
-          }
-        }
-        @media screen and (min-width:100px) and (max-width: 1365px) {
-          body {
-            padding:0;
-            margin:0 auto;
-          }
-        }
-        /* 禁用iPhone中Safari的字号自动调整 */
-        html {
-          -webkit-text-size-adjust: 100%;
-          -ms-text-size-adjust: 100%;
-          /* 解决IOS默认滑动很卡的情况 */
-          -webkit-overflow-scrolling : touch;
-            height: 100%;
-            width: 100%;
-        }
-        body{
-            height: 100%;
-            width: 100%;
-        }
-        /* 禁止缩放表单 */
-        input[type="submit"], input[type="reset"], input[type="button"], input {
-          resize: none;
-          border: none;
-        }
-
-        /* 取消链接高亮  */
-        body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
-
-        /* 设置HTML5元素为块 */
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-          display: block;
-        }
-
-        textarea{
-            outline: none;
-        }
-
-        /* 图片自适应 */
-        img {
-          width: 100%;
-          height: auto;
-          width: auto\9; /* ie8 */
-          display: block;
-          -ms-interpolation-mode: bicubic;/*为了照顾ie图片缩放失真*/
-        }
-        input,select{
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        select{
-            background: #fff;
-            color: #555;
-            /*background-image:url('../img/up.png');*/
-            background-repeat:no-repeat;
-            background-position: right center;
-            background-size: 0.5rem 100%;
-            /*background: url('../../img/up.png') no-repeat right center;*/
-        }
-
-        /* 初始化 */
-        body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-          margin: 0;
-          padding: 0;
-        }
-        body {
-          font: 12px/1.5 'Microsoft YaHei','宋体', Tahoma, Arial, sans-serif;
-          color: #555;
-        }
-        em, i {
-          font-style: normal;
-        }
-        ul,li{
-          list-style-type: none;
-        }
-        strong {
-          font-weight: normal;
-        }
-        .clearfix:after {
-          content: "";
-          display: block;
-          visibility: hidden;
-          height: 0;
-          clear: both;
-        }
-        .clearfix {
-          zoom: 1;
-        }
-        a {
-          text-decoration: none;
-          color: #969696;
-          font-family: 'Microsoft YaHei', Tahoma, Arial, sans-serif;
-        }
-        a:hover {
-          text-decoration: none;
-        }
-        ul, ol {
-          list-style: none;
-        }
-        h1, h2, h3, h4, h5, h6 {
-          font-size: 100%;
-          font-family: 'Microsoft YaHei';
-        }
-        img {
-          border: none;
-        }
-        input{
-          font-family: 'Microsoft YaHei';
-        }
-        /*单行溢出*/
-        .one-txt-cut{
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        /*多行溢出 手机端使用*/
-        .txt-cut{
-          overflow : hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          /* -webkit-line-clamp: 2; */
-          -webkit-box-orient: vertical;
-        }
-        /* 移动端点击a链接出现蓝色背景问题解决 */
-        a:link,a:active,a:visited,a:hover {
-          background: none;
-          -webkit-tap-highlight-color: rgba(0,0,0,0);
-          -webkit-tap-highlight-color: transparent;
-        }
-
-        .clear:after{content:".";height:0;overflow:hidden;visibility:hidden;display:block;clear:both;}
-        .cursor{cursor: pointer;}
-
-        /*组件切换的动画*/
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s
-        }
-
-        /* .fade-leave-active in <2.1.8 */
-        .fade-enter, .fade-leave-to {
-            opacity: 0
-        }</style><link href="css/chunk-727f59f8.30c0efc8.css" rel="prefetch"><link href="js/chunk-727f59f8.2bf580a5.js" rel="prefetch"><link href="css/app.95327e62.css" rel="preload" as="style"><link href="css/chunk-vendors.266f0744.css" rel="preload" as="style"><link href="js/app.64ddb2e2.js" rel="preload" as="script"><link href="js/chunk-vendors.5ffacf11.js" rel="preload" as="script"><link href="css/chunk-vendors.266f0744.css" rel="stylesheet"><link href="css/app.95327e62.css" rel="stylesheet"></head><body><div id="app"></div><script>var ie = IEVersion();
-      if (ie <= 8) {
-        alert("浏览器版本过低，请升级浏览器")
+<!DOCTYPE html><html lang="zh-cmn-Hans"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel="icon" href="favicon.ico"><script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script><script src="https://cdn.staticfile.org/vuex/3.0.1/vuex.min.js"></script><script src="https://cdn.staticfile.org/vue-router/3.0.3/vue-router.min.js"></script><script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script><title>小视秀</title><style type="text/css">@media screen and (min-width:1366px) {
+      body {
+        min-width: 960px !important;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
       }
-      function IEVersion() {
-        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
-        var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
-        var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
-        if(isIE) {
-          var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
-          reIE.test(userAgent);
-          var fIEVersion = parseFloat(RegExp["$1"]);
-          console.log(fIEVersion)
-          if(fIEVersion == 7) {
-            return 7;
-          } else if(fIEVersion == 8) {
-            return 8;
-          } else if(fIEVersion == 9) {
-            return 9;
-          } else if(fIEVersion == 10) {
-            return 10;
-          } else {
-            return 6;//IE版本<=7
-          }
-        } else if(isEdge) {
-          return 'edge';//edge
-        } else if(isIE11) {
-          return 11; //IE11
-        }else{
-          return 15;//不是ie浏览器
-        }
+    }
+
+    @media screen and (min-width:100px) and (max-width: 1365px) {
+      body {
+        padding: 0;
+        margin: 0 auto;
       }
-      function browserRedirect() {
-			var sUserAgent = navigator.userAgent.toLowerCase();
-			var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-			var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-			var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-			var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-			var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-			var bIsAndroid = sUserAgent.match(/android/i) == "android";
-			var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-			var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-			if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-				//使用rem
-			var clientWidth = document.documentElement.clientWidth;
-			if (clientWidth >= 750) {
-				document.documentElement.style.fontSize = '100px';
-			} else {
-					document.documentElement.style.fontSize = clientWidth / 7.5 + "px";
-					window.addEventListener("resize",function(){document.documentElement.style.fontSize = innerWidth/7.5  + "px"; },false)
-				}
-			} else {
+    }
+
+    /* 禁用iPhone中Safari的字号自动调整 */
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      /* 解决IOS默认滑动很卡的情况 */
+      -webkit-overflow-scrolling: touch;
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* 禁止缩放表单 */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    input {
+      resize: none;
+      border: none;
+    }
+
+    /* 取消链接高亮  */
+    body,
+    div,
+    ul,
+    li,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    textarea,
+    select,
+    p,
+    dl,
+    dt,
+    dd,
+    a,
+    img,
+    button,
+    form,
+    table,
+    th,
+    tr,
+    td,
+    tbody,
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    /* 设置HTML5元素为块 */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    textarea {
+      outline: none;
+    }
+
+    /* 图片自适应 */
+    img {
+      width: 100%;
+      height: auto;
+      width: auto\9;
+      /* ie8 */
+      display: block;
+      -ms-interpolation-mode: bicubic;
+      /*为了照顾ie图片缩放失真*/
+    }
+
+    input,
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    select {
+      background: #fff;
+      color: #555;
+      /*background-image:url('../img/up.png');*/
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 0.5rem 100%;
+      /*background: url('../../img/up.png') no-repeat right center;*/
+    }
+
+    /* 初始化 */
+    body,
+    div,
+    ul,
+    li,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    textarea,
+    select,
+    p,
+    dl,
+    dt,
+    dd,
+    a,
+    img,
+    button,
+    form,
+    table,
+    th,
+    tr,
+    td,
+    tbody,
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font: 12px/1.5 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+      color: #555;
+    }
+
+    em,
+    i {
+      font-style: normal;
+    }
+
+    ul,
+    li {
+      list-style-type: none;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    .clearfix:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      height: 0;
+      clear: both;
+    }
+
+    .clearfix {
+      zoom: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #969696;
+      font-family: 'Microsoft YaHei', Tahoma, Arial, sans-serif;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 100%;
+      font-family: 'Microsoft YaHei';
+    }
+
+    img {
+      border: none;
+    }
+
+    input {
+      font-family: 'Microsoft YaHei';
+    }
+
+    /*单行溢出*/
+    .one-txt-cut {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /*多行溢出 手机端使用*/
+    .txt-cut {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      /* -webkit-line-clamp: 2; */
+      -webkit-box-orient: vertical;
+    }
+
+    /* 移动端点击a链接出现蓝色背景问题解决 */
+    a:link,
+    a:active,
+    a:visited,
+    a:hover {
+      background: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .clear:after {
+      content: ".";
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      display: block;
+      clear: both;
+    }
+
+    .cursor {
+      cursor: pointer;
+    }
+
+    /*组件切换的动画*/
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity .5s
+    }
+
+    /* .fade-leave-active in <2.1.8 */
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0
+    }</style><link href="css/chunk-727f59f8.30c0efc8.css" rel="prefetch"><link href="js/chunk-727f59f8.2bf580a5.js" rel="prefetch"><link href="css/app.f9fc1c6f.css" rel="preload" as="style"><link href="css/chunk-vendors.266f0744.css" rel="preload" as="style"><link href="js/app.fdaf5810.js" rel="preload" as="script"><link href="js/chunk-vendors.5ffacf11.js" rel="preload" as="script"><link href="css/chunk-vendors.266f0744.css" rel="stylesheet"><link href="css/app.f9fc1c6f.css" rel="stylesheet"></head><body><div id="app"></div><script>var ie = IEVersion();
+    if (ie <= 8) {
+      alert("浏览器版本过低，请升级浏览器")
+    }
+    function IEVersion() {
+      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+      var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+      var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+      var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+      if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        console.log(fIEVersion)
+        if (fIEVersion == 7) {
+          return 7;
+        } else if (fIEVersion == 8) {
+          return 8;
+        } else if (fIEVersion == 9) {
+          return 9;
+        } else if (fIEVersion == 10) {
+          return 10;
+        } else {
+          return 6;//IE版本<=7
+        }
+      } else if (isEdge) {
+        return 'edge';//edge
+      } else if (isIE11) {
+        return 11; //IE11
+      } else {
+        return 15;//不是ie浏览器
+      }
+    }
+    function browserRedirect() {
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        //使用rem
+        var clientWidth = document.documentElement.clientWidth;
+        if (clientWidth >= 750) {
+          document.documentElement.style.fontSize = '100px';
+        } else {
+          document.documentElement.style.fontSize = clientWidth / 7.5 + "px";
+          window.addEventListener("resize", function () { document.documentElement.style.fontSize = innerWidth / 7.5 + "px"; }, false)
+        }
+      } else {
         var tid;
-    		function refreshRem() {
-    			let designSize = 1920; // 设计图尺寸
-    			let html = document.documentElement;
-    			let wW = html.clientWidth;// 窗口宽度
-    			let rem = wW * 100 / designSize; 
-    			document.documentElement.style.fontSize = rem + 'px';
-    	  }
-        window.addEventListener('resize', function() {
+        function refreshRem() {
+          let designSize = 1920; // 设计图尺寸
+          let html = document.documentElement;
+          let wW = html.clientWidth;// 窗口宽度
+          let rem = wW * 100 / designSize;
+          document.documentElement.style.fontSize = rem + 'px';
+        }
+        window.addEventListener('resize', function () {
           clearTimeout(tid);
           tid = setTimeout(refreshRem, 300);
         }, false);
-        window.addEventListener('pageshow', function(e) {
+        window.addEventListener('pageshow', function (e) {
           if (e.persisted) {
             clearTimeout(tid);
             tid = setTimeout(refreshRem, 300);
@@ -222,5 +356,5 @@
 
         refreshRem();
       }
-		}
-		browserRedirect();</script><script src="js/chunk-vendors.5ffacf11.js"></script><script src="js/app.64ddb2e2.js"></script></body></html>
+    }
+    browserRedirect();</script><script src="js/chunk-vendors.5ffacf11.js"></script><script src="js/app.fdaf5810.js"></script></body></html>
